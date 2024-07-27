@@ -63,6 +63,6 @@ class TopicTree:
     def save(self, save_path: str):
         with open(save_path, "w",encoding="utf-8") as f:
             for path in self.tree_paths:
-                f.write(json.dumps(dict(path=path))+"\n")
+                f.write(json.dumps({"path": path}, ensure_ascii=False) + "\n")
 
 
